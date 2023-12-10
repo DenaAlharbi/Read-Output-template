@@ -73,4 +73,39 @@ public class Main {
     }
 }
 
+//put each line in a string
+ArrayList<String> lines = new ArrayList<>();
+        try (Scanner input = new Scanner(new File(FILE_NAME))) {
+            while (input.hasNextLine()) {
+                String New = input.nextLine();
+                System.out.println(New);
+                lines.add(New);
+            }
+        } catch (FileNotFoundException e) {
+            System.err.format("File not found: %s%n", FILE_NAME);
+        }
+        for (String line : lines) {
+            String[] splitter = line.split(" ");}
+
+//getting values
+teamPoints.getOrDefault(splitter[0], 0)
+ for (Map.Entry<String, Integer> entry : teamPoints.entrySet()) {
+    entry.getValue()
+
+//
+ Map<String, Integer[]> map = new HashMap<>();
+map.put("key", new Integer[] {1, 2, 3});
+
+Integer[] array = map.get("key");
+Integer[] newArray = Arrays.copyOf(array, array.length + 1);
+newArray[newArray.length - 1] = 4;
+
+map.put("key", newArray);
+
+for (Map.Entry<String, Integer[]> entry : map.entrySet()) {
+    String key = entry.getKey();
+    Integer[] value = entry.getValue();
+    System.out.println(key + ": " + Arrays.toString(value));
+}
+
 
